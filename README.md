@@ -12,20 +12,6 @@ This is a simple note-taking application built with a Quasar frontend and a Node
     * Express
     * MySQL
 
-## Screenshots
-
-* **Main Page:**
-    ![Main Page](https://github.com/user-attachments/assets/700c2e1a-549a-4d8e-b209-cef73f76c379)
-    * This is the main page displaying a list of existing notes. Users can see the titles of their notes and have options to add new notes, edit existing ones, or delete them.
-
-* **Add New Note:**
-    ![Add New Note](https://github.com/user-attachments/assets/863b8088-55af-4af2-a970-c1c825c2636f)
-    * This window allows users to create a new note by entering a title and the content of the note.
-
-* **Edit Note:**
-    ![Edit Note](https://github.com/user-attachments/assets/25187414-b474-4e89-a521-95cc95298c63)
-    * This window enables users to modify the title and content of an existing note. The current title and content are pre-filled for easy editing.
-
 ## Getting Started
 
 Follow the instructions below to get the development environment running.
@@ -145,3 +131,17 @@ You can use tools like Postman or `curl` to test the following API endpoints aft
         ```
 
 **Important:** For the `PUT` and `DELETE` requests targeting a specific note, you **must** include the note's ID at the end of the URL (e.g., `/notes/1`). The `GET` request for a specific note also requires the ID.
+
+## Screenshots
+
+* **Main Page:**
+    ![Main Page](https://github.com/user-attachments/assets/700c2e1a-549a-4d8e-b209-cef73f76c379)
+    * This is the main page displaying a list of existing notes. Users can see the titles of their notes and have options to add new notes, edit existing ones, or delete them.
+
+* **Add New Note:**
+    ![Add New Note](https://github.com/user-attachments/assets/863b8088-55af-4af2-a970-c1c825c2636f)
+    * This window allows users to create a new note by entering a title and the content of the note.
+
+* **Edit Note:**
+    ![Edit Note](https://github.com/user-attachments/assets/25187414-b474-4e89-a521-95cc95298c63)
+    * This window enables users to modify the title and content of an existing note. The current title and content are pre-filled for easy editing.
