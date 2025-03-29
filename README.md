@@ -33,10 +33,10 @@ Follow the instructions below to get the development environment running.
 3.  **Create a `.env` file in the `backend` directory and add the following environment variables:**
 
     ```
-    MYSQL_HOST='127.0.0.1'
-    MYSQL_USER='root'
-    MYSQL_PASSWORD='1234'
-    MYSQL_DATABASE='notes'
+    MYSQL_HOST='127.0.0.1' (localhost)
+    MYSQL_USER='root' (depends on ur database)
+    MYSQL_PASSWORD='1234' (depends on ur database)
+    MYSQL_DATABASE='notes' (name of schema in ur database)
     PORT=8080
     ```
 
@@ -85,7 +85,7 @@ The frontend provides the user interface for interacting with the notes, and the
 
 ## Backend API Endpoints for Testing
 
-You can use tools like Postman or `curl` to test the following API endpoints after starting the backend server:
+You can use tools like Postman or `Thunder client in vs` to test the following API endpoints after starting the backend server:
 
 * **Get all notes:**
     ```
