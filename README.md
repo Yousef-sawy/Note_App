@@ -12,6 +12,20 @@ This is a simple note-taking application built with a Quasar frontend and a Node
     * Express
     * MySQL
 
+## Screenshots
+
+* **Main Page:**
+    ![Main Page](https://github.com/user-attachments/assets/700c2e1a-549a-4d8e-b209-cef73f76c379)
+    * This is the main page displaying a list of existing notes. Users can see the titles of their notes and have options to add new notes, edit existing ones, or delete them.
+
+* **Add New Note:**
+    ![Add New Note](https://github.com/user-attachments/assets/863b8088-55af-4af2-a970-c1c825c2636f)
+    * This window allows users to create a new note by entering a title and the content of the note.
+
+* **Edit Note:**
+    ![Edit Note](https://github.com/user-attachments/assets/25187414-b474-4e89-a521-95cc95298c63)
+    * This window enables users to modify the title and content of an existing note. The current title and content are pre-filled for easy editing.
+
 ## Getting Started
 
 Follow the instructions below to get the development environment running.
@@ -33,10 +47,10 @@ Follow the instructions below to get the development environment running.
 3.  **Create a `.env` file in the `backend` directory and add the following environment variables:**
 
     ```
-    MYSQL_HOST='127.0.0.1' (localhost)
-    MYSQL_USER='root' (depends on ur database)
-    MYSQL_PASSWORD='1234' (depends on ur database)
-    MYSQL_DATABASE='notes' (name of schema in ur database)
+    MYSQL_HOST='127.0.0.1'
+    MYSQL_USER='root'
+    MYSQL_PASSWORD='1234'
+    MYSQL_DATABASE='notes'
     PORT=8080
     ```
 
@@ -76,16 +90,16 @@ Follow the instructions below to get the development environment running.
 
 This is a basic note application that allows users to perform the following actions:
 
-* **Create:** Add new notes with a title and content.
-* **Read:** View a list of all created notes fetched from the backend using Axios.
-* **Update:** Edit the title and content of existing notes, with updates sent to the backend via Axios.
+* **Create:** Add new notes with a title and content (see "Add New Note" screenshot).
+* **Read:** View a list of all created notes (see "Main Page" screenshot) fetched from the backend using Axios.
+* **Update:** Edit the title and content of existing notes (see "Edit Note" screenshot), with updates sent to the backend via Axios.
 * **Delete:** Remove notes from the application, with deletion requests sent to the backend using Axios.
 
 The frontend provides the user interface for interacting with the notes, and the backend handles the data storage and retrieval using the MySQL database. **Axios facilitates the communication between the frontend and backend for all data operations.**
 
 ## Backend API Endpoints for Testing
 
-You can use tools like Postman or `Thunder client in vs` to test the following API endpoints after starting the backend server:
+You can use tools like Postman or `curl` to test the following API endpoints after starting the backend server:
 
 * **Get all notes:**
     ```
