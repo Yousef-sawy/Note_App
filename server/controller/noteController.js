@@ -21,7 +21,7 @@ export const fetchNote = async (req, res, next) => {
 
 export const addNote = async (req, res, next) => {
     try {
-        const { title, content } = req.body;  // ✅ Match database column name
+        const { title, content } = req.body;  
         if (!title || !content) {
             return res.status(400).json({ message: "Title and content are required" });
         }
@@ -46,7 +46,7 @@ export const removeNote = async (req, res, next) => {
 
 export const modifyNote = async (req, res, next) => {
     try {
-        const { title, content } = req.body;  // Change `contents` to `content`
+        const { title, content } = req.body;  
         if (!title || !content) {
             return res.status(400).json({ message: "Title and content are required" });
         }

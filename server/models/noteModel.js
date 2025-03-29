@@ -10,9 +10,9 @@ export const getNote = async (id) => {
     return rows[0];
 };
 
-export const createNote = async (title, content) => { // ✅ Use `content` instead of `contents`
+export const createNote = async (title, content) => { 
     const [result] = await pool.query(
-        "INSERT INTO notes (title, content) VALUES (?, ?)",  // ✅ Correct column name
+        "INSERT INTO notes (title, content) VALUES (?, ?)",  
         [title, content]
     );
     return getNote(result.insertId);
@@ -21,16 +21,16 @@ export const createNote = async (title, content) => { // ✅ Use `content` inste
 
 export const deleteNote = async (id) => {
     const [result] = await pool.query("DELETE FROM notes WHERE id = ?", [id]);
-    return result.affectedRows > 0; // Returns true if a row was deleted
+    return result.affectedRows > 0; 
 };
 
-export async function updateNote(id, title, content) {  // Change `contents` to `content`
+export async function updateNote(id, title, content) {  
     const [result] = await pool.query(`
         UPDATE notes 
         SET title = ?, content = ? 
         WHERE id = ?
     `, [title, content, id]);
 
-    if (result.affectedRows === 0) return null; // If no rows were updated, return null
+    if (result.affectedRows === 0) return null; 
     return getNote(id);
 }

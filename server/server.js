@@ -24,15 +24,15 @@ app.use('/api/notes', noteRoutes);
 
 
 app.use((req, res) => {
-    res.status(404).json({ message: 'Route Not Found 🚫' });
+    res.status(404).json({ message: 'Route Not Found ' });
 });
 
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).json({ message: 'Something went wrong 💩' });
+    res.status(500).json({ message: 'Something went wrong ' });
 });
 
 
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
