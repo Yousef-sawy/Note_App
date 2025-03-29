@@ -1,11 +1,12 @@
 # Simple Notes App
 
-This is a simple note-taking application built with a Quasar frontend and a Node.js/Express/MySQL backend. Users can create, read, update, and delete notes.
+This is a simple note-taking application built with a Quasar frontend and a Node.js/Express/MySQL backend. Users can create, read, update, and delete notes. **Axios is used as the HTTP client in the frontend to communicate with the backend API.**
 
 ## Technologies Used
 
 * **Frontend:**
     * Quasar Framework (Vue.js based)
+    * **Axios:** Promise-based HTTP client for making API requests.
 * **Backend:**
     * Node.js
     * Express
@@ -69,27 +70,64 @@ Follow the instructions below to get the development environment running.
     quasar dev
     ```
 
-    This command will build and start the Quasar development server, and the application will be accessible in your browser (usually at `http://localhost:8080`).
+    This command will build and start the Quasar development server, and the application will be accessible in your browser (usually at `http://localhost:8080`). The frontend uses Axios to make API calls to the backend.
 
 ## Application Overview
 
 This is a basic note application that allows users to perform the following actions:
 
 * **Create:** Add new notes with a title and content.
-* **Read:** View a list of all created notes.
-* **Update:** Edit the title and content of existing notes.
-* **Delete:** Remove notes from the application.
+* **Read:** View a list of all created notes fetched from the backend using Axios.
+* **Update:** Edit the title and content of existing notes, with updates sent to the backend via Axios.
+* **Delete:** Remove notes from the application, with deletion requests sent to the backend using Axios.
 
-The frontend provides the user interface for interacting with the notes, and the backend handles the data storage and retrieval using the MySQL database.
+The frontend provides the user interface for interacting with the notes, and the backend handles the data storage and retrieval using the MySQL database. **Axios facilitates the communication between the frontend and backend for all data operations.**
 
-## Backend API Endpoints (Example - May vary based on implementation)
+## Backend API Endpoints for Testing
 
-While the specific API endpoints aren't detailed here, you can expect common RESTful API patterns for CRUD operations on notes, such as:
+You can use tools like Postman or `curl` to test the following API endpoints after starting the backend server:
 
-* `GET /api/notes`: Retrieve all notes.
-* `POST /api/notes`: Create a new note.
-* `GET /api/notes/:id`: Retrieve a specific note by its ID.
-* `PUT /api/notes/:id`: Update an existing note.
-* `DELETE /api/notes/:id`: Delete a note.
+* **Get all notes:**
+    ```
+    GET http://localhost:8080/api/notes
+    ```
+    This endpoint retrieves a list of all notes from the database.
 
-The frontend application will make HTTP requests to these backend endpoints to manage the notes data.
+* **Create a new note:**
+    ```
+    POST http://localhost:8080/api/notes
+    ```
+    Request body should be a JSON object containing `title` and `content` for the new note. For example:
+    ```json
+    {
+        "title": "My New Note",
+        "content": "This is the content of my new note."
+    }
+    ```
+
+* **Get a specific note by ID, Update a note, or Delete a note:**
+    These endpoints require a specific note ID at the end of the URL. Replace `:id` with the actual ID of the note you want to interact with. For example, to interact with the note with ID `1`:
+
+    * **Get a specific note:**
+        ```
+        GET http://localhost:8080/notes/1
+        ```
+
+    * **Update an existing note:**
+        ```
+        PUT http://localhost:8080/notes/1
+        ```
+        Request body should be a JSON object containing the updated `title` and/or `content`. For example:
+        ```json
+        {
+            "title": "Updated Title",
+            "content": "This is the updated content."
+        }
+        ```
+
+    * **Delete a note:**
+        ```
+        DELETE http://localhost:8080/notes/1
+        ```
+
+**Important:** For the `PUT` and `DELETE` requests targeting a specific note, you **must** include the note's ID at the end of the URL (e.g., `/notes/1`). The `GET` request for a specific note also requires the ID.
