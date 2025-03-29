@@ -33,10 +33,10 @@ Follow the instructions below to get the development environment running.
 3.  **Create a `.env` file in the `backend` directory and add the following environment variables:**
 
     ```
-    MYSQL_HOST='127.0.0.1'
-    MYSQL_USER='root'
-    MYSQL_PASSWORD='1234'
-    MYSQL_DATABASE='notes'
+    MYSQL_HOST='127.0.0.1' (or locolhost)
+    MYSQL_USER='root' (depends on your MySQL database config)
+    MYSQL_PASSWORD='1234' (depends on your MySQL database config)
+    MYSQL_DATABASE='notes' (name of schema in ur database)
     PORT=8080
     ```
 
@@ -85,7 +85,7 @@ The frontend provides the user interface for interacting with the notes, and the
 
 ## Backend API Endpoints for Testing
 
-You can use tools like Postman or `curl` to test the following API endpoints after starting the backend server:
+You can use tools like Postman or `Tunder client in vs` to test the following API endpoints after starting the backend server:
 
 * **Get all notes:**
     ```
@@ -136,12 +136,15 @@ You can use tools like Postman or `curl` to test the following API endpoints aft
 
 * **Main Page:**
     ![Main Page](https://github.com/user-attachments/assets/700c2e1a-549a-4d8e-b209-cef73f76c379)
+  
     * This is the main page displaying a list of existing notes. Users can see the titles of their notes and have options to add new notes, edit existing ones, or delete them.
 
 * **Add New Note:**
     ![Add New Note](https://github.com/user-attachments/assets/863b8088-55af-4af2-a970-c1c825c2636f)
+  
     * This window allows users to create a new note by entering a title and the content of the note.
 
 * **Edit Note:**
     ![Edit Note](https://github.com/user-attachments/assets/25187414-b474-4e89-a521-95cc95298c63)
+  
     * This window enables users to modify the title and content of an existing note. The current title and content are pre-filled for easy editing.
